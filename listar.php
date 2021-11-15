@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'head.php';
-if(isset($_REQUEST['listar']))
+if(isset($_REQUEST['listar']))//si he pulsado listar
 {
   $tipo=$_REQUEST['tipo'];
   echo '<table> 
@@ -27,7 +27,7 @@ if(isset($_REQUEST['listar']))
  echo '</table>';
 }
 else{
-  echo "no hay incidencias de ese tipo";
+    echo "no existe esa incidencia";
 }
 echo '</table>';
                           
