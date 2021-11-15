@@ -3,7 +3,6 @@ session_start();
 include 'head.php';
   if(isset($_REQUEST['enviar']))//si he pulsado el boton enviar
   {
-      //$contador_incidencias++;
       $tipo=$_REQUEST['tipo'];
       if(isset($_REQUEST['urgente'])) 
             $urgente='SI';
