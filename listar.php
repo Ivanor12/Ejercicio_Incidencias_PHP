@@ -13,11 +13,12 @@ if(isset($_REQUEST['listar']))//si he pulsado listar
     </tr>';
   foreach($_SESSION['incidencias'] as $clave=>$valor)
   {
-    if($valor[2]==$tipo)
+    if ($tipo == $valor[2])
     {
       echo '<tr>
         <td>'.$valor[0].' </td>
         <td>'.$valor[1].' </td>
+        <td>'.$valor[2].' </td>
         <td>'.$valor[3].' </td>
         <td>'.$valor[4].' </td>
 
