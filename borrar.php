@@ -3,13 +3,23 @@ session_start();
 include 'head.php';
 if(isset($_REQUEST['borrar']));
 {
-    $num_incidencia=$_REQUEST['num_incidencia']-1;
-    $contador_antes=count($_SESSION['incidencias']);
+    $num_incidencia=$_REQUEST['num_incidencia'];
+    //numero elementos en el array antes de borrar
+    $contador_antes=count($_SESSION['incidencias']);//los contadores se ponen para luego cuando se borren las tapas o no existan que nos salga la alerta
+    //borro en el array [$codigo_tapa es el indice que queremos borrar]
     unset($_SESSION['incidencia'][$num_incidencia]);
     $contador_despues=count($_SESSION['incidencias']);
     if($contador_antes==$contador_despues)
     {
         echo '<script>alert("No existe esa incidencia");</script>';
+    }
+    else
+    {
+        unset($_SESSION['incidencias'][$numero_incidencia]);//metiendo codigo_tapa nos elimina el registro de votos
+        
+        echo '<script language="javascript">';
+        echo 'alert("Incidencia borrada con exito");';
+        echo '</script>';
     }
 }                                  
  print' 

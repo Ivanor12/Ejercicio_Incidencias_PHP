@@ -1,9 +1,11 @@
 <?php
 session_start();
 include 'head.php';
+$contador_incidencias=count($_SESSION['incidencias']);
   if(isset($_REQUEST['enviar']))//si he pulsado el boton enviar
   {
       $tipo=$_REQUEST['tipo'];
+      $urgente=0;
       if(isset($_REQUEST['urgente'])) 
             $urgente='SI';
       else 
@@ -17,6 +19,8 @@ include 'head.php';
       $ip=$_SERVER['REMOTE_ADDR']; 
       echo 'Tu direccion IP es:' .$_SERVER['REMOTE_ADDR'];'<br>' ;
       $contador_incidencias=count($_SESSION['incidencias'])+1;
+      //ahora guardamos el array de la incidencia nueva
+      //[]para que guarde en el array que existe, y no cree otro
       $_SESSION['incidencias'][]=array($tipo,$urgente,$lugar,$descripcion);
       echo'<pre>';
       var_dump($_SESSION['incidencias']);

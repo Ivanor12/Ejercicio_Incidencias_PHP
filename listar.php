@@ -8,20 +8,20 @@ if(isset($_REQUEST['listar']))//si he pulsado listar
     <tr>
         <th>id</th>
         <th>tipo</th>
-        <th>fecha</th>
         <th>lugar</th>
+        <th>Descripcion</th>
     </tr>';
   foreach($_SESSION['incidencias'] as $clave=>$valor)
-  {
-    if ($tipo == $valor[2])
+{//si el tipo seleccionado coincide con la posicion [2] del array (la 3 fisicamente)
+    //entonces nos imprima el valor que queremos $valor[x] en la tabla
+    if($valor[2]==$tipo)//selecionamos [] comenzando desde 0 si hay 7 del 0-6
     {
       echo '<tr>
         <td>'.$valor[0].' </td>
-        <td>'.$valor[1].' </td>
         <td>'.$valor[2].' </td>
-        <td>'.$valor[3].' </td>
         <td>'.$valor[4].' </td>
-
+        <td>'.$valor[6].' </td>
+                    
       </tr>';
     }
   }
@@ -35,7 +35,7 @@ echo '</table>';
  print' 
          <strong>SELECCIONA EL TIPO DE INCIDENCIA A LISTAR<BR><BR></strong>
                                      
-        <div   class="postcontent"><form action="" method="post">
+        <div   class="postcontent"><form action="listar.php" method="post">
             <table align="center" class="content-layout">
               										  </td></tr>
               <tr>
