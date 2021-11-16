@@ -17,7 +17,7 @@ include 'head.php';
       $ip=$_SERVER['REMOTE_ADDR']; 
       echo 'Tu direccion IP es:' .$_SERVER['REMOTE_ADDR'];'<br>' ;
       $contador_incidencias=count($_SESSION['incidencias'])+1;
-      $_SESSION['incidencias']=array($tipo,$urgente,$lugar,$descripcion);
+      $_SESSION['incidencias'][]=array($tipo,$urgente,$lugar,$descripcion);
       echo'<pre>';
       var_dump($_SESSION['incidencias']);
       echo '</pre>';
